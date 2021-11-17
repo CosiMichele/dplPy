@@ -41,7 +41,7 @@ __license__ = "GNU GPLv3"
 # define `reader` module as a definition function
 # input is expected to be a file path with file name and extension
 
-def readers(input):
+def readers(input, name):
     """
     This function imports common ring width
     data files into Python as arrays
@@ -88,6 +88,8 @@ def readers(input):
                     for i in range(1, len(csv_data_split)):
                         allvals.append(csv_data_split[i]
                         )
+                    if name:
+                        name = allvals
                 print(
                     "Successful -- loaded file name: "
                     + os.path.basename(input)

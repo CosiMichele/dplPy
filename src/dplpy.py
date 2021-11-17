@@ -152,7 +152,7 @@ def readme_from_parser(args):
 
 # set the definition for the Readers functions (from readers.py)
 def readers_from_parser(args):
-    readers(input=args.input)
+    readers(input=args.input, name=args.name)
 
 # set the definition for the Writers funcitons (from writers.py)
 #def writers_from_parser(args):
@@ -203,6 +203,11 @@ def main(args=None):
         required=True
     )
 
+   parser_readers.add_argument(
+        "--name", "-n",
+        help="<Optional> Give array a new name without spaces",
+        required=False
+    )
     parser_readers.set_defaults(func=readers_from_parser)
 
 # Writer file output
