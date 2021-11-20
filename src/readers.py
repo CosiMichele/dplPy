@@ -68,28 +68,18 @@ def readers(input, name):
                 + "\n" + lines[0] + "\n"
                 )
                 # creates blank array
-                csvs = []
-                for  rows  in lines:
-                    csvs.append(rows)
-                #remove empty lines from the file.
-                while "" in csvs:
-                    csvs.remove("")
-                csv_temp = csvs[1].split(",")
-                startyear = csv_temp[0]
+                lines = data.split("\n")
                 print(
-                    "Start Year: "
-                    + startyear
-                )
-                print("")
-                # create blank array
-                allvals = []
-                for csv_data in csvs:
-                    csv_data_split = csv_data.split(",")
-                    for i in range(1, len(csv_data_split)):
-                        allvals.append(csv_data_split[i]
-                        )
-                    if name:
-                        name = allvals
+                    "CSV header detail: \n"
+                    + "\n" + lines[0] + "\n"
+                    )
+                # creates blank array
+                array = []
+                for r in range(1,(len(lines))):
+                    vals = lines[r].split(",")
+                    array.append(vals)
+                print(array)
+
                 print(
                     "Successful -- loaded file name: "
                     + os.path.basename(input)
