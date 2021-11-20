@@ -205,7 +205,7 @@ def readers(input, name):
                             #end
                         print(
                             "Site ID: "
-                            + side_id
+                            + site_id
                         )
             except Exception as e:
                 print(e)
